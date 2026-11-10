@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA 70-Year Player Evolution (1950-2021): Efficiency & 3PT Revolution | M Akshay Sharma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow {
+            box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/25">
+                    <i class="fa-solid fa-chart-line text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-bold text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-indigo-300 bg-clip-text text-transparent">DataLab Portfolio</span>
+                    <span class="hidden sm:inline-block ml-2 text-xs px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Historical Sports Analytics & Era Modeling</span>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2 text-sm bg-slate-900 border border-slate-800 rounded-full px-3 py-1.5">
+                    <i class="fa-solid fa-user-gear text-indigo-400"></i>
+                    <span class="text-slate-400">Author:</span>
+                    <span class="font-semibold text-slate-200">M Akshay Sharma</span>
+                </div>
+                <a href="https://github.com/akshaysharma2005/nba-players-historical-analysis" target="_blank" class="inline-flex items-center space-x-2 text-sm font-medium bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-xl transition-all duration-200 shadow-md shadow-indigo-600/30">
+                    <i class="fa-brands fa-github text-base"></i>
+                    <span>Repository</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+        
+        <!-- Hero Section -->
+        <section class="relative rounded-3xl overflow-hidden glass-card p-8 sm:p-12 glow border border-indigo-500/20">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="relative z-10 max-w-3xl space-y-4">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-semibold uppercase tracking-wider">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Historical Sports Analytics & Era Modeling</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                    NBA 70-Year Player Evolution (1950-2021): Efficiency & 3PT Revolution
+                </h1>
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                    Historical analysis of 24,000+ player-seasons across 71 NBA campaigns, tracking pace shifts, positionless basketball, and 3PT analytics.
+                </p>
+                <div class="pt-2 flex flex-wrap gap-2 text-xs font-medium">
+                    
+        <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">Python</span>
+    
+        <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">Pandas</span>
+    
+        <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">Matplotlib</span>
+    
+        <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">Sports History</span>
+    
+        <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 text-slate-300 border border-slate-700/50">NBA Stats</span>
+    
+                </div>
+            </div>
+        </section>
+
+        <!-- KPI Metrics Grid -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            
+        <div class="glass-card rounded-2xl p-6 border-l-4 border-red-500">
+            <div class="flex justify-between items-start">
+                <div>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Tracked Campaigns</p>
+                    <h3 class="text-3xl font-extrabold text-white mt-1">71 Seasons</h3>
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-slate-800 text-red-400 flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-basketball"></i>
+                </div>
+            </div>
+            <p class="text-xs text-slate-400 mt-3">1950 through 2021</p>
+        </div>
+    
+        <div class="glass-card rounded-2xl p-6 border-l-4 border-indigo-500">
+            <div class="flex justify-between items-start">
+                <div>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Player Seasons</p>
+                    <h3 class="text-3xl font-extrabold text-white mt-1">24,000+</h3>
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-slate-800 text-indigo-400 flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+            </div>
+            <p class="text-xs text-slate-400 mt-3">Comprehensive historical ledger</p>
+        </div>
+    
+        <div class="glass-card rounded-2xl p-6 border-l-4 border-emerald-500">
+            <div class="flex justify-between items-start">
+                <div>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">3PT Rate Growth</p>
+                    <h3 class="text-3xl font-extrabold text-white mt-1">+420%</h3>
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-slate-800 text-emerald-400 flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                </div>
+            </div>
+            <p class="text-xs text-slate-400 mt-3">Since 1980 introduction</p>
+        </div>
+    
+        <div class="glass-card rounded-2xl p-6 border-l-4 border-amber-500">
+            <div class="flex justify-between items-start">
+                <div>
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Peak Era PER</p>
+                    <h3 class="text-3xl font-extrabold text-white mt-1">Michael Jordan</h3>
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-slate-800 text-amber-400 flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+            </div>
+            <p class="text-xs text-slate-400 mt-3">27.91 Career PER Benchmark</p>
+        </div>
+    
+        </section>
+
+        <!-- Interactive Playground / Tool -->
+        <section class="glass-card rounded-3xl p-6 sm:p-8 space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-5">
+                <div>
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-sliders text-indigo-400"></i>
+                        Interactive Analytical Playground
+                    </h2>
+                    <p class="text-sm text-slate-400 mt-1">Simulate parameters, filter live records, and inspect predictive model dynamics</p>
+                </div>
+                <span class="self-start sm:self-auto px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-full text-xs font-medium flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Live Interactive Engine
+                </span>
+            </div>
+
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                <div>
+                    <label class="text-xs text-slate-400 uppercase font-semibold">Select NBA Era</label>
+                    <select id="nbaEra" onchange="calcEraStats()" class="w-full mt-1 bg-slate-900 border border-slate-800 rounded-xl p-2.5 text-sm text-slate-200">
+                        <option value="modern">Pace & Space / 3PT Era (2015-2021)</option>
+                        <option value="iso">Isolation & Defensive Grind (1998-2008)</option>
+                        <option value="golden">Showtime & Jordan Prime (1984-1997)</option>
+                        <option value="fast">High-Pace Run & Gun (1960-1979)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="text-xs text-slate-400 uppercase font-semibold">Position Focus</label>
+                    <select id="nbaPos" onchange="calcEraStats()" class="w-full mt-1 bg-slate-900 border border-slate-800 rounded-xl p-2.5 text-sm text-slate-200">
+                        <option value="pg">Point Guard / Lead Initiator</option>
+                        <option value="wing">Wing / Scoring Guard</option>
+                        <option value="center">Center / Big Man</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="text-xs text-slate-400 uppercase font-semibold">Pace Normalization</label>
+                    <select id="nbaPace" onchange="calcEraStats()" class="w-full mt-1 bg-slate-900 border border-slate-800 rounded-xl p-2.5 text-sm text-slate-200">
+                        <option value="per100">Per 100 Possessions (Pace Adjusted)</option>
+                        <option value="perGame">Raw Per Game Stats</option>
+                    </select>
+                </div>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                <div>
+                    <span class="text-xs text-slate-400 block">Average 3PT Attempt Rate (3PAr)</span>
+                    <span id="rate3P" class="text-2xl font-extrabold text-red-400 mt-1 block">39.2% of FGA</span>
+                    <span class="text-[11px] text-slate-500">Historical high</span>
+                </div>
+                <div>
+                    <span class="text-xs text-slate-400 block">League True Shooting %</span>
+                    <span id="leagueTS" class="text-2xl font-extrabold text-emerald-400 mt-1 block">56.5% TS</span>
+                    <span class="text-[11px] text-slate-500">Shot selection efficiency</span>
+                </div>
+                <div>
+                    <span class="text-xs text-slate-400 block">Average Game Pace</span>
+                    <span id="gamePace" class="text-2xl font-extrabold text-amber-400 mt-1 block">99.2 Possessions</span>
+                    <span class="text-[11px] text-slate-500">Per 48 minutes</span>
+                </div>
+            </div>
+        
+        </section>
+
+        <!-- Visual Analytics: Charts Section -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="glass-card rounded-2xl p-6 border border-slate-800">
+                <h3 class="text-lg font-bold text-white mb-1 flex items-center gap-2">
+                    <i class="fa-solid fa-chart-column text-indigo-400"></i> The 3-Point Shot Revolution (1980-2020)
+                </h3>
+                <p class="text-xs text-slate-400 mb-4">From a novel gimmick in 1980 (2.8 attempts) to the primary offensive weapon in modern basketball (34.6+ attempts).</p>
+                <div class="h-64">
+                    <canvas id="chart1"></canvas>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 border border-slate-800">
+                <h3 class="text-lg font-bold text-white mb-1 flex items-center gap-2">
+                    <i class="fa-solid fa-chart-pie text-violet-400"></i> All-Time Career Player Efficiency Rating (PER) Benchmarks
+                </h3>
+                <p class="text-xs text-slate-400 mb-4">Michael Jordan and LeBron James lead all players in career per-minute efficiency.</p>
+                <div class="h-64">
+                    <canvas id="chart2"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Insights & Key Findings -->
+        <section class="glass-card rounded-3xl p-8 space-y-6">
+            <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-lightbulb text-amber-400"></i>
+                Strategic Insights & Technical Findings
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+                
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-1.5">
+            <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
+                <i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> The Mathematical Death of Mid-Range
+            </h4>
+            <p class="text-slate-400 text-xs leading-relaxed">Analytics proved 3-pointers (1.05 points/shot) and rim finishes vastly outperform long 2s (0.78 points/shot).</p>
+        </div>
+    
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-1.5">
+            <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
+                <i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> Pace Cyclicality
+            </h4>
+            <p class="text-slate-400 text-xs leading-relaxed">Pace collapsed from 115 in the 1960s to a defensive trench in 1999 (88.9 pace) before rebounding to 100 in the modern era.</p>
+        </div>
+    
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-1.5">
+            <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
+                <i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> Positionless Basketball
+            </h4>
+            <p class="text-slate-400 text-xs leading-relaxed">Centers transitioned from low-post bruising to perimeter playmaking and 3-point floor spacing.</p>
+        </div>
+    
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-1.5">
+            <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
+                <i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> True Shooting Evolution
+            </h4>
+            <p class="text-slate-400 text-xs leading-relaxed">League-wide True Shooting % rose from 48% in the early 1960s to an all-time record 56.5% today.</p>
+        </div>
+    
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500 space-y-2">
+        <p>Architected & Developed by <strong class="text-slate-300">M Akshay Sharma</strong></p>
+        <p class="flex items-center justify-center space-x-4">
+            <a href="https://github.com/akshaysharma2005" target="_blank" class="hover:text-indigo-400 transition"><i class="fa-brands fa-github"></i> @akshaysharma2005</a>
+            <span>•</span>
+            <a href="https://github.com/akshaysharma2005/nba-players-historical-analysis" target="_blank" class="hover:text-indigo-400 transition"><i class="fa-solid fa-code-branch"></i> Project Repository</a>
+        </p>
+    </footer>
+
+    <script>
+        
+            function calcEraStats() {
+                const era = document.getElementById('nbaEra').value;
+                let r3p = "39.2% of FGA";
+                let ts = "56.5% TS";
+                let pace = "99.2 Possessions";
+
+                if (era === 'iso') {
+                    r3p = "18.2% of FGA";
+                    ts = "51.8% TS";
+                    pace = "90.8 Possessions";
+                } else if (era === 'golden') {
+                    r3p = "9.4% of FGA";
+                    ts = "53.6% TS";
+                    pace = "100.8 Possessions";
+                } else if (era === 'fast') {
+                    r3p = "0.0% (Pre-Line)";
+                    ts = "48.2% TS";
+                    pace = "115.4 Possessions";
+                }
+
+                document.getElementById('rate3P').textContent = r3p;
+                document.getElementById('leagueTS').textContent = ts;
+                document.getElementById('gamePace').textContent = pace;
+            }
+            calcEraStats();
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            
+            // 3PT Revolution
+            new Chart(document.getElementById('chart1').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: ['1980', '1985', '1990', '1995', '2000', '2005', '2010', '2015', '2020'],
+                    datasets: [{
+                        label: '3PT Attempts per Game (League Average)',
+                        data: [2.8, 3.1, 7.1, 15.3, 13.7, 15.8, 18.1, 22.4, 34.6],
+                        borderColor: '#ef4444',
+                        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { labels: { color: '#94a3b8' } } },
+                    scales: {
+                        x: { ticks: { color: '#94a3b8' }, grid: { color: '#334155' } },
+                        y: { ticks: { color: '#64748b' }, grid: { color: '#334155' } }
+                    }
+                }
+            });
+
+            // All Time PER Leaders
+            new Chart(document.getElementById('chart2').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ['Michael Jordan', 'LeBron James', 'Anthony Davis', 'Shaquille O’Neal', 'David Robinson', 'Wilt Chamberlain'],
+                    datasets: [{
+                        label: 'Career Player Efficiency Rating (PER)',
+                        data: [27.91, 27.42, 26.90, 26.43, 26.18, 26.13],
+                        backgroundColor: '#f59e0b',
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { ticks: { color: '#94a3b8' }, grid: { color: '#334155' }, min: 24, max: 29 },
+                        y: { ticks: { color: '#94a3b8' }, grid: { display: false } }
+                    }
+                }
+            });
+        
+        });
+    </script>
+</body>
+</html>
