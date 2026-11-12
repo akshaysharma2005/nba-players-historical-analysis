@@ -205,7 +205,7 @@
                 <h3 class="text-lg font-bold text-white mb-1 flex items-center gap-2">
                     <i class="fa-solid fa-chart-column text-indigo-400"></i> The 3-Point Shot Revolution (1980-2020)
                 </h3>
-                <p class="text-xs text-slate-400 mb-4">From a novel gimmick in 1980 (2.8 attempts) to the primary offensive weapon in modern basketball (34.6+ attempts).</p>
+                <p class="text-xs text-slate-400 mb-4">From 2.8 attempts in 1980 to over 34.6 attempts in modern basketball.</p>
                 <div class="h-64">
                     <canvas id="chart1"></canvas>
                 </div>
@@ -213,9 +213,9 @@
 
             <div class="glass-card rounded-2xl p-6 border border-slate-800">
                 <h3 class="text-lg font-bold text-white mb-1 flex items-center gap-2">
-                    <i class="fa-solid fa-chart-pie text-violet-400"></i> All-Time Career Player Efficiency Rating (PER) Benchmarks
+                    <i class="fa-solid fa-chart-pie text-violet-400"></i> All-Time Career Player Efficiency Rating (PER) Leaders
                 </h3>
-                <p class="text-xs text-slate-400 mb-4">Michael Jordan and LeBron James lead all players in career per-minute efficiency.</p>
+                <p class="text-xs text-slate-400 mb-4">Michael Jordan and LeBron James lead NBA history in career per-minute efficiency.</p>
                 <div class="h-64">
                     <canvas id="chart2"></canvas>
                 </div>
@@ -232,30 +232,30 @@
                 
         <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-1.5">
             <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
-                <i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> The Mathematical Death of Mid-Range
+                <i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> Analytics Revolution
             </h4>
-            <p class="text-slate-400 text-xs leading-relaxed">Analytics proved 3-pointers (1.05 points/shot) and rim finishes vastly outperform long 2s (0.78 points/shot).</p>
+            <p class="text-slate-400 text-xs leading-relaxed">Shot charts shifted dramatically toward corner threes and restricted area finishes.</p>
         </div>
     
         <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-1.5">
             <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
-                <i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> Pace Cyclicality
+                <i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> Pace Cycles
             </h4>
-            <p class="text-slate-400 text-xs leading-relaxed">Pace collapsed from 115 in the 1960s to a defensive trench in 1999 (88.9 pace) before rebounding to 100 in the modern era.</p>
+            <p class="text-slate-400 text-xs leading-relaxed">Game pace hit defensive troughs in 1999 (88.9 pace) before returning to 100 in the modern era.</p>
         </div>
     
         <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-1.5">
             <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
-                <i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> Positionless Basketball
+                <i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> True Shooting Surge
             </h4>
-            <p class="text-slate-400 text-xs leading-relaxed">Centers transitioned from low-post bruising to perimeter playmaking and 3-point floor spacing.</p>
+            <p class="text-slate-400 text-xs leading-relaxed">League-wide efficiency rose to an all-time record 56.5% TS in 2021.</p>
         </div>
     
         <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-1.5">
             <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
-                <i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> True Shooting Evolution
+                <i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> Big Men Adaptation
             </h4>
-            <p class="text-slate-400 text-xs leading-relaxed">League-wide True Shooting % rose from 48% in the early 1960s to an all-time record 56.5% today.</p>
+            <p class="text-slate-400 text-xs leading-relaxed">Centers transformed from back-to-the-basket bruisers to playmakers and 3PT shooters.</p>
         </div>
     
             </div>
@@ -303,7 +303,6 @@
         
         window.addEventListener('DOMContentLoaded', () => {
             
-            // 3PT Revolution
             new Chart(document.getElementById('chart1').getContext('2d'), {
                 type: 'line',
                 data: {
@@ -328,7 +327,6 @@
                 }
             });
 
-            // All Time PER Leaders
             new Chart(document.getElementById('chart2').getContext('2d'), {
                 type: 'bar',
                 data: {

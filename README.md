@@ -38,10 +38,10 @@ This repository features an interactive web application with dynamic analytical 
 
 ## 💡 Strategic Insights & Key Findings
 
-- **The Mathematical Death of Mid-Range**: Analytics proved 3-pointers (1.05 points/shot) and rim finishes vastly outperform long 2s (0.78 points/shot).
-- **Pace Cyclicality**: Pace collapsed from 115 in the 1960s to a defensive trench in 1999 (88.9 pace) before rebounding to 100 in the modern era.
-- **Positionless Basketball**: Centers transitioned from low-post bruising to perimeter playmaking and 3-point floor spacing.
-- **True Shooting Evolution**: League-wide True Shooting % rose from 48% in the early 1960s to an all-time record 56.5% today.
+- **Analytics Revolution**: Shot charts shifted dramatically toward corner threes and restricted area finishes.
+- **Pace Cycles**: Game pace hit defensive troughs in 1999 (88.9 pace) before returning to 100 in the modern era.
+- **True Shooting Surge**: League-wide efficiency rose to an all-time record 56.5% TS in 2021.
+- **Big Men Adaptation**: Centers transformed from back-to-the-basket bruisers to playmakers and 3PT shooters.
 
 ---
 
